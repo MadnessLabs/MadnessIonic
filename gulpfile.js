@@ -280,13 +280,14 @@ function addRoute(state, url, template, controller){
     };
     newRoutes.push(newState);
     gulp.src(configFile)
-        .pipe(jeditor({
-            'routes': newRoutes
-        }))
-        .pipe(gulp.dest("./"));
-        setTimeout(function(){
-            runSequence('set-vars', 'router', 'js-build', 'sync-reload');
-        }, 2000);
+    .pipe(jeditor({
+        'routes': newRoutes
+    }))
+    .pipe(gulp.dest("./"))
+    .on('end', function(){
+        appRoutes = newRoutes;
+        runSequence('router', 'js-build', 'sync-reload');
+    });
 }
 
 function capFirstLetter(string) {
