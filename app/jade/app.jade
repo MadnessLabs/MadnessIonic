@@ -24,7 +24,8 @@ html(lang="en")
         ion-nav-bar.bar-positive.has-tabs-top
             ion-nav-buttons(side='left')
                 button.button.button-icon.icon.ion-navicon(ng-click="$root.toggleMenu()")
-            ion-nav-buttons(side="right")
+            // Run 'gulp add-page --n=search' and uncomment the line below
+            //ion-nav-buttons(side="right")
                 a.button.button-icon.icon.ion-android-search(ui-sref="search")
         ion-side-menus
             ion-side-menu(side="left" expose-aside-when="large" ng-show="$root.showSidebar")
