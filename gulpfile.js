@@ -272,12 +272,14 @@ function removePage(state) {
 
 function addRoute(state, url, template, controller){
     var newRoutes = appRoutes;
-    newRoutes.push({
+    var newState = {
         state: state,
         url: url,
         templateUrl: template,
         controller: appName + '.' + controller + ' as ctrl'
-    });
+    };
+    console.log(newState);
+    newRoutes.push(newState);
     gulp.src(configFile)
         .pipe(jeditor({
             'routes': newRoutes
