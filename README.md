@@ -46,7 +46,7 @@ After you Have installed all of the dependencies using the step by step above yo
 Installation is required if you wish to view the application.  This assumes you have installed all of the **[Dependencies](#dependencies)**. Run the command below to install the build dependencies, build the web root from source files, and start a [Browser Sync](http://www.browsersync.io/) session in the default browser, to begin building.
 
 ```
-git clone https://github.com/madnesslabs/madnessenjin.git <APP NAME>
+git clone https://github.com/MadnessLabs/MadnessIonic.git <APP NAME>
 cd <APP NAME>
 npm install
 ``` 

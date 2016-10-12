@@ -630,6 +630,12 @@ gulp.task('config', function(callback){
     );
 });
 
+gulp.task('config-run', function() {
+    return gulp.src(tmplDir + 'ts/run.ts')
+        .pipe(replace('@@{name}', cleanString(appName).toLowerCase()))
+        .pipe(gulp.dest(jsSrcDir));
+});
+
 gulp.task('config-build', function(){
     return runSequence(
         'set-vars', 
@@ -846,7 +852,8 @@ gulp.task('install', function(done){
             runSequence(
                 'clean',
                 'clean-install',
-                'js-app',  
+                'js-app',
+                'config-run',
                 'config-js', 
                 'config-css', 
                 'config-cordova', 
