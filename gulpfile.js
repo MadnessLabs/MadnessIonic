@@ -1257,6 +1257,8 @@ gulp.task('router', function(){
     var routes = [];
     var defaultRoute = false;
 
+    console.log(appRoutes);
+
     for(var i=0; i < appRoutes.length; i++){
         var route = appRoutes[i];
         var stateName = route.state;
