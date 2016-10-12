@@ -285,7 +285,6 @@ function addRoute(state, url, template, controller){
     }))
     .pipe(gulp.dest("./"))
     .on('end', function(){
-        appRoutes = newRoutes;
         runSequence('router', 'js-build', 'sync-reload');
     });
 }
@@ -869,7 +868,6 @@ gulp.task('install', function(done){
                 'fonts',
                 'favicon',
                 'icon-copy', 
-                'router',
                 'html-template',
                 'html-build', 
                 'css-import', 
@@ -1256,8 +1254,6 @@ gulp.task('remove-popover', function(done){
 gulp.task('router', function(){
     var routes = [];
     var defaultRoute = false;
-
-    console.log(appRoutes);
 
     for(var i=0; i < appRoutes.length; i++){
         var route = appRoutes[i];
