@@ -284,13 +284,9 @@ function addRoute(state, url, template, controller){
             'routes': newRoutes
         }))
         .pipe(gulp.dest("./"));
-    if (this.seq.slice(-1)[0] !== 'install') {
         setTimeout(function(){
-            runSequence('router', 'js-build', 'sync-reload');
+            runSequence('set-vars', 'router', 'js-build', 'sync-reload');
         }, 2000);
-    } else {
-        setVars();
-    }
 }
 
 function capFirstLetter(string) {
