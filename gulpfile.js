@@ -632,7 +632,7 @@ gulp.task('config', function(callback){
 
 gulp.task('config-run', function() {
     return gulp.src(tmplDir + 'ts/run.ts')
-        .pipe(replace('@@{app}', cleanString(appName).toLowerCase()))
+        .pipe(replace('@@{app}', appName))
         .pipe(gulp.dest(jsSrcDir));
 });
 
