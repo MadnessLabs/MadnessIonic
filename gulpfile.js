@@ -843,10 +843,14 @@ gulp.task('install', function(done){
         .on('end', function(){
             setVars();
 
-            var pages = res.pages.split(',');
-            
-            for (var i = 0; i < pages.length; i++) {
-                addPage(pages[i]);
+            if (res.pages.indexOf(',')) {
+                var pages = res.pages.split(',');
+                
+                for (var i = 0; i < pages.length; i++) {
+                    addPage(pages[i]);
+                }
+            } else {
+                addPage(res.pages);
             }
 
             runSequence(
