@@ -34,6 +34,11 @@ var addsrc       = require('gulp-add-src'),
     tslint       = require('gulp-tslint'),
     uglify       = require('gulp-uglify');
 
+require('gulp-require-tasks')({
+    path: './enjin/tasks',
+    gulp: gulp
+});
+
  /////////////////////////////////////
 // FUNCTIONS
 function addService(serviceName) {
@@ -421,22 +426,6 @@ gulp.task('deploy', shell.task(['gulp build --e=' + deploy.env, 'ionic upload --
 gulp.task('upload', shell.task(['gulp build --e=' + deploy.env, 'ionic upload --note "' + deploy.note]));
 
 gulp.task('ios', shell.task(['gulp build --e=' + deploy.env, 'ionic build ios']));
-
-gulp.task('add-controller', function(done){
-    if (argv.n) {
-        addController(argv.n);
-        done();
-    } else {
-        inquirer.prompt([{
-            type: 'input',
-            message: 'What is the name of the controller?',
-            name: 'controller'
-        }], function(res) {
-            addController(res.controller);
-            done();
-        });
-    }
-});
 
 gulp.task('add-component', function(done){
     if (argv.n) {
