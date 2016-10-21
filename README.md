@@ -34,7 +34,7 @@ Below is a list of resources to help understand the software stack better.  Keep
 
 1. **Install NodeJS** by clicking the "Install" button on their <a href="https://nodejs.org/" target="_blank">Home Page</a> and following the instructions
 2. **Open Shell** and run the following command  
-```npm install -g cordova ionic browser-sync gulp jade typescript jadelint sass-lint```
+```npm install -g cordova ionic browser-sync gulp jade typescript typings jadelint sass-lint```
 
 
 After you Have installed all of the dependencies using the step by step above you can install project using the [installation instructions](#installation). Then you are ready to start hacking with the platform. 

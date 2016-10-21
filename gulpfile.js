@@ -697,6 +697,15 @@ gulp.task('config-sublime', function(){
         .pipe(gulp.dest('./'));
 });
 
+gulp.task('config-ionic', function() {
+    return gulp.src('ionic.config.json')
+        .pipe(jeditor(function(json) {
+            json.name = cleanString(appName).toLowerCase();
+            return json; 
+        }))
+        .pipe(gulp.dest("./"));
+});
+
 gulp.task('config-vars', setVars);
 
 gulp.task('css-build', function(){
@@ -850,6 +859,7 @@ gulp.task('install', function(done){
                 'config-run',
                 'config-js', 
                 'config-css', 
+                'config-ionic',
                 'config-cordova', 
                 'config-node', 
                 'config-sublime',
