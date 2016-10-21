@@ -1,4 +1,9 @@
-const shell = require('gulp-shell');
+const exec = require('child_process').exec;
 
 
-module.exports = shell.task(['ionic run android']);
+module.exports = function(gulp, callback) {
+    exec('ionic run android', function(error, stdout, stderr) {
+        console.log(stdout);
+        callback();
+    });
+};

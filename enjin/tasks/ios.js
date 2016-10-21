@@ -1,4 +1,12 @@
-const shell = require('gulp-shell');
+const exec = require('child_process').exec;
 
 
-module.exports = shell.task(['gulp build --e=' + deploy.env, 'ionic build ios']);
+module.exports = function(gulp, callback) {
+    exec('gulp build --e=' + deploy.env, function(error, stdout, stderr) {
+        console.log(stdout);
+        exec('ionic build ios', function(error, stdout, stderr) {
+            console.log(stdout);
+            callback();
+        });
+    });
+};

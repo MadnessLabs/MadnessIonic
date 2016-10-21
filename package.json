@@ -31,7 +31,6 @@
     "gulp-require-tasks": "^1.0.5",
     "gulp-sass": "^2.3.2",
     "gulp-sass-lint": "^1.1.0",
-    "gulp-shell": "^0.5.1",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-strip-comments": "^2.4.3",
     "gulp-template": "^4.0.0",
