@@ -28,7 +28,7 @@ module.exports = function(gulp, callback) {
             if(errorCount === 0 && global.isWatching && global.synced){
                 runSequence('html:compile');
             }else if(errorCount > 0 && global.isWatching && global.synced){
-                global.bs.notify(errorMessage.join("<br />"), errorTimeout);
+                browserSync.notify(errorMessage.join("<br />"), errorTimeout);
             }
         });
 };

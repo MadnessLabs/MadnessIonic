@@ -8,7 +8,7 @@ module.exports = function(gulp, callback) {
     var tsResult = gulp.src(jsWatch)
         .pipe(gulpif(global.isWatching, plumber({
             errorHandler: function(error) {
-                global.bs.notify(error.message, errorTimeout);
+                browserSync.notify(error.message, errorTimeout);
                 this.emit('end');
             }
         })))

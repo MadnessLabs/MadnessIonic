@@ -7,7 +7,7 @@ module.exports = function(gulp, callback) {
     return gulp.src(jsDestDir+jsDestFile)
         .pipe(plumber({
             errorHandler: function(error) {
-                global.bs.notify(error.message, errorTimeout);
+                browserSync.notify(error.message, errorTimeout);
                 console.log(error.message);
                 this.emit('end');
             }

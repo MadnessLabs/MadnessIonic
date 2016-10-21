@@ -11,7 +11,7 @@ module.exports = function(gulp, callback) {
         .pipe(gulpif(global.isWatching, plumber({
             errorHandler: function(error) {
                 cache.caches = {};
-                global.bs.notify(error.message, errorTimeout);
+                browserSync.notify(error.message, errorTimeout);
                 this.emit('end');
             }
         })))

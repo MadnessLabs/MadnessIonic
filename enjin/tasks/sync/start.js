@@ -1,5 +1,5 @@
 module.exports = function(gulp, callback) {
-    global.bs.init({
+    browserSync.init({
         port: 3000,
         files: ['index.html', '**/*.js'],
         injectChanges: true,

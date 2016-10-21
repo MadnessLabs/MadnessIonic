@@ -10,6 +10,6 @@ module.exports = function(gulp, callback) {
         .pipe(rename('index.html'))
         .pipe(gulp.dest(appDir))
         .on('end', function(){
-            if(global.isWatching){ global.bs.reload(); }
+            if(global.isWatching){ browserSync.reload(); }
         });
 };
