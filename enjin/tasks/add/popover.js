@@ -1,20 +1,20 @@
 const inquirer = require('inquirer');
 const argv     = require('yargs').argv;
 
-const addController = require('../../services/addController');
+const addPopover = require('../../services/addPopover');
 
 
 module.exports = function(gulp, callback) {
     if (argv.n) {
-        addController(gulp, argv.n, 'controller');
+        addPopover(gulp, argv.n);
         callback();
     } else {
         inquirer.prompt([{
             type: 'input',
-            message: 'What is the name of the controller?',
-            name: 'controller'
+            message: 'What is the name of the popover?',
+            name: 'name'
         }], function(res) {
-            addController(gulp, res.controller, 'controller');
+            addPopover(gulp, res.name);
             callback();
         });
     }

@@ -35,7 +35,7 @@ var addsrc       = require('gulp-add-src'),
     uglify       = require('gulp-uglify');
 
 require('gulp-require-tasks')({
-    path: './enjin/tasks',
+    path: process.cwd() + '/enjin/tasks',
     gulp: gulp
 });
 

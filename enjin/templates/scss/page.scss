@@ -2,7 +2,7 @@
 @import "../variables";
 
 // PAGE STYLES
-.state-@@{name}{
+.page-<%= name %>{
     @media (max-width: $screen-xl) {
 
     }

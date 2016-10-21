@@ -1,20 +1,20 @@
 const inquirer = require('inquirer');
 const argv     = require('yargs').argv;
 
-const addController = require('../../services/addController');
+const addPage = require('../../services/addPage');
 
 
 module.exports = function(gulp, callback) {
     if (argv.n) {
-        addController(gulp, argv.n, 'controller');
+        addPage(gulp, argv.n);
         callback();
     } else {
         inquirer.prompt([{
             type: 'input',
-            message: 'What is the name of the controller?',
-            name: 'controller'
+            message: 'What is the name of the page?',
+            name: 'name'
         }], function(res) {
-            addController(gulp, res.controller, 'controller');
+            addPage(gulp, res.name);
             callback();
         });
     }

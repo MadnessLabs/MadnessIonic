@@ -1,13 +1,13 @@
 /// <reference path="../../typings/index.d.ts"/>
-module @@{app} {
+module <%= app %> {
     'use strict';
 
-    class @@{name}Controller {
+    class <%= name %>Controller {
         constructor() {
             // ON LOAD       
         }
     }
 
-    angular.module('@@{app}')
-           .controller('@@{app}.@@{name}Controller', @@{name}Controller);
+    angular.module('<%= app %>')
+           .controller('<%= app %>.<%= name %>Controller', <%= name %>Controller);
 }

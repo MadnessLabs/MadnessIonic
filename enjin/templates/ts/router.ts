@@ -1,19 +1,19 @@
 /// <reference path="../typings/index.d.ts"/>
-module @@{app} {
+module <%= app %> {
     'use strict';
 
-    class @@{app}Router {
+    class <%= app %>Router {
         constructor($stateProvider, $urlRouterProvider) {
             $stateProvider
-                @@{routes};
+                <%= routes %>;
 
             $urlRouterProvider.otherwise(function($injector, $location) {
                 var $state = $injector.get('$state');
-                $state.go('@@{default}');
+                $state.go('<%= default %>');
             });
         }
     }
 
-    angular.module('@@{app}')
-           .config(@@{app}Router);
+    angular.module('<%= app %>')
+           .config(<%= app %>Router);
 }

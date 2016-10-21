@@ -2,7 +2,7 @@
 
 declare var ionic;
 
-module @@{app} {
+module <%= app %> {
     'use strict';
 
     class AppRunner {
@@ -60,5 +60,5 @@ module @@{app} {
             });
         }
     }
-    angular.module('@@{app}').run(AppRunner);
+    angular.module('<%= app %>').run(AppRunner);
 }
