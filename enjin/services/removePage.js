@@ -4,7 +4,7 @@ const runSequence = require("run-sequence");
 const fs          = require('fs');
 
 
-module.exports = function(gulp, name) {
+module.exports = function(name) {
     var newRoutes = appRoutes;
     for(var i=0; i < newRoutes.length; i++){
         var route = newRoutes[i];
@@ -30,6 +30,6 @@ module.exports = function(gulp, name) {
     .pipe(clean({force: true}));
     
     setTimeout(function(){
-        runSequence('router', 'js-build', 'sync-reload');
+        runSequence('router', 'js:build', 'sync:reload');
     }, 2000);
 };

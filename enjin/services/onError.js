@@ -3,4 +3,4 @@ module.exports = function() {
     console.log(err);
     browserSync.notify(err.message);
     this.emit('end');
-}
+};

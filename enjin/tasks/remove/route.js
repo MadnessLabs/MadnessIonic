@@ -5,7 +5,7 @@ const removeRoute = require('../../services/removeRoute');
 
 module.exports = function(gulp, callback) {
     if (argv.n) {
-        removeRoute(gulp, argv.n);
+        removeRoute(argv.n);
         callback();
     } else {
         inquirer.prompt([{
@@ -13,7 +13,7 @@ module.exports = function(gulp, callback) {
             message: 'What is the name of the route you would like to remove?',
             name: 'name'
         }], function(res) {
-            removeRoute(gulp, res.name);
+            removeRoute(res.name);
             callback();
         });
     }

@@ -6,7 +6,7 @@ const addComponent = require('../../services/addComponent');
 
 module.exports = function(gulp, callback) {
     if (argv.n) {
-        addComponent(gulp, argv.n, argv.a, argv.r);
+        addComponent(argv.n, argv.a, argv.r);
         callback();
     } else {
         inquirer.prompt([{
@@ -19,7 +19,7 @@ module.exports = function(gulp, callback) {
             name: 'attrs',
             default: false
         }], function(res) {
-            addComponent(gulp, res.name, res.attrs);
+            addComponent(res.name, res.attrs);
             callback();
         });
     }    

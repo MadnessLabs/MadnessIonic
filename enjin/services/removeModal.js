@@ -1,7 +1,7 @@
 const clean    = require('gulp-clean');
 
 
-module.exports = function(gulp, name) {
+module.exports = function(name) {
     gulp.src([
         cssSrcDir+'modal/'+name+'.scss',
         htmlSrcDir+'modal/'+name+'.jade',

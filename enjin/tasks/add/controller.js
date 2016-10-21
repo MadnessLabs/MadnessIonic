@@ -6,7 +6,7 @@ const addController = require('../../services/addController');
 
 module.exports = function(gulp, callback) {
     if (argv.n) {
-        addController(gulp, argv.n, 'controller');
+        addController(argv.n, 'controller');
         callback();
     } else {
         inquirer.prompt([{
@@ -14,7 +14,7 @@ module.exports = function(gulp, callback) {
             message: 'What is the name of the controller?',
             name: 'controller'
         }], function(res) {
-            addController(gulp, res.controller, 'controller');
+            addController(res.controller, 'controller');
             callback();
         });
     }

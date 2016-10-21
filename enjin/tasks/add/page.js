@@ -6,7 +6,7 @@ const addPage = require('../../services/addPage');
 
 module.exports = function(gulp, callback) {
     if (argv.n) {
-        addPage(gulp, argv.n);
+        addPage(argv.n);
         callback();
     } else {
         inquirer.prompt([{
@@ -14,7 +14,7 @@ module.exports = function(gulp, callback) {
             message: 'What is the name of the page?',
             name: 'name'
         }], function(res) {
-            addPage(gulp, res.name);
+            addPage(res.name);
             callback();
         });
     }

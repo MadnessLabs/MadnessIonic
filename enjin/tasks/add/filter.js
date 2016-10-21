@@ -6,7 +6,7 @@ const addFilter = require('../../services/addFilter');
 
 module.exports = function(gulp, callback) {
     if (argv.n) {
-        addFilter(gulp, argv.n);
+        addFilter(argv.n);
         callback();
     } else {
         inquirer.prompt([{
@@ -14,7 +14,7 @@ module.exports = function(gulp, callback) {
             message: 'What is the name of the filter?',
             name: 'name'
         }], function(res) {
-            addFilter(gulp, res.name);
+            addFilter(res.name);
             callback();
         });
     }

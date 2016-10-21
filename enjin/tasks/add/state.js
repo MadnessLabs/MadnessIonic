@@ -6,7 +6,7 @@ const addState = require('../../services/addState');
 
 module.exports = function(gulp, callback) {
     if (argv.n && argv.v) {
-        addState(gulp, argv.n, argv.v);
+        addState(argv.n, argv.v);
         callback();
     } else {
         inquirer.prompt([{
@@ -19,7 +19,7 @@ module.exports = function(gulp, callback) {
             name: 'view',
             default: 'tab'
         }], function(res) {
-            addState(gulp, res.name, res.view);
+            addState(res.name, res.view);
             callback();
         });
     }

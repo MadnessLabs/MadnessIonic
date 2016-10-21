@@ -4,7 +4,7 @@ const template = require('gulp-template');
 const addDirective = require('./addDirective');
 
 
-module.exports = function(gulp, name, attrs, restrict) {
+module.exports = function(name, attrs, restrict) {
     const nameDashLower = name.replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase();
 
     gulp.src(tmplDir+'jade/directive.jade')
@@ -15,5 +15,5 @@ module.exports = function(gulp, name, attrs, restrict) {
         .pipe(template({name: nameDashLower}))
         .pipe(rename(name+'.scss'))
         .pipe(gulp.dest(cssSrcDir+'directive/'));
-    addDirective(gulp, name, attrs, true, restrict);
+    addDirective(name, attrs, true, restrict);
 };

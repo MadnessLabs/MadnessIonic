@@ -6,7 +6,7 @@ const removeFilter = require('../../services/removeFilter');
 
 module.exports = function(gulp, callback) {
     if (argv.n) {
-        removeFilter(gulp, argv.n);
+        removeFilter(argv.n);
         callback();
     } else {
         inquirer.prompt([{
@@ -14,7 +14,7 @@ module.exports = function(gulp, callback) {
             message: 'What is the state name of the filter you would like to remove?',
             name: 'name'
         }], function(res) {
-            removeFilter(gulp, res.name);
+            removeFilter(res.name);
             callback();
         });
     }

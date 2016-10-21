@@ -6,7 +6,7 @@ const addRoute = require('../../services/addRoute');
 
 module.exports = function(gulp, callback) {
     if (argv.n && argv.n && argv.t && argv.c) {
-        addRoute(gulp, argv.n, argv.u, argv.t, argv.c);
+        addRoute(argv.n, argv.u, argv.t, argv.c);
         callback();
     } else {
         inquirer.prompt([{
@@ -26,7 +26,7 @@ module.exports = function(gulp, callback) {
             message: 'What is the name of the controller?',
             name: 'controller'
         }], function(res) {
-            addRoute(gulp, res.name, res.url, res.template, res.controller);
+            addRoute(res.name, res.url, res.template, res.controller);
             callback();
         });
     }

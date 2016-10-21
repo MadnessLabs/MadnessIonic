@@ -7,7 +7,7 @@ const addRoute       = require('./addRoute');
 const capFirstLetter = require('./capFirstLetter');
 
 
-module.exports = function(gulp, name, view) {
+module.exports = function(name, view) {
     gulp.src(tmplDir+'jade/state.jade')
         .pipe(template({name: name}))
         .pipe(rename(name+'.jade'))
@@ -16,10 +16,10 @@ module.exports = function(gulp, name, view) {
         .pipe(template({name: name}))
         .pipe(rename(name+'.scss'))
         .pipe(gulp.dest(cssSrcDir+'state/'));
-    addController(gulp, name + 'State', 'state');
+    addController(name + 'State', 'state');
     var stateSteps = name.split(/(?=[A-Z])/);
     var state = stateSteps.join(".").toLowerCase();
-    addRoute(gulp, state, '/'+stateSteps[stateSteps.length - 1].toLowerCase(), 'html/state/'+name+'.html', capFirstLetter(name)+'StateController', view);
+    addRoute(state, '/'+stateSteps[stateSteps.length - 1].toLowerCase(), 'html/state/'+name+'.html', capFirstLetter(name)+'StateController', view);
     
     var copyText = `ui-view(name="${view}")`;
 

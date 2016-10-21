@@ -6,7 +6,7 @@ const addService = require('../../services/addService');
 
 module.exports = function(gulp, callback) {
     if (argv.n) {
-        addService(gulp, argv.n, argv.t);
+        addService(argv.n, argv.t);
         callback();
     } else {
         inquirer.prompt([{
@@ -26,7 +26,7 @@ module.exports = function(gulp, callback) {
                 }
             }
         }], function(res) {
-            addService(gulp, res.name, res.type);
+            addService(res.name, res.type);
             callback();
         });
     }

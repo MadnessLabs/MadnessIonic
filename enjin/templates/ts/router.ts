@@ -9,7 +9,7 @@ module <%= app %> {
 
             $urlRouterProvider.otherwise(function($injector, $location) {
                 var $state = $injector.get('$state');
-                $state.go('<%= default %>');
+                $state.go('<%= defaultRoute %>');
             });
         }
     }

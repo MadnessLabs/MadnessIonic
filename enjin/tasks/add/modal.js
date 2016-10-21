@@ -6,7 +6,7 @@ const addModal = require('../../services/addModal');
 
 module.exports = function(gulp, callback) {
     if (argv.n) {
-        addModal(gulp, argv.n);
+        addModal(argv.n);
         callback();
     } else {
         inquirer.prompt([{
@@ -14,7 +14,7 @@ module.exports = function(gulp, callback) {
             message: 'What is the name of the modal?',
             name: 'name'
         }], function(res) {
-            addModal(gulp, res.name);
+            addModal(res.name);
             callback();
         });
     }

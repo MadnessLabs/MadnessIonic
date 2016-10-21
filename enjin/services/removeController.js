@@ -1,7 +1,7 @@
 const clean    = require('gulp-clean');
 const runSequence = require("run-sequence");
 
-module.exports = function(gulp, name, dir) {
+module.exports = function(name, dir) {
     dir = dir ? dir : 'controller' ;
     gulp.src([
         jsSrcDir+ dir + '/'+name+'.ts'
@@ -11,6 +11,6 @@ module.exports = function(gulp, name, dir) {
     .pipe(clean({force: true}));
     
     setTimeout(function(){
-        runSequence('router', 'js-build', 'sync-reload');
+        runSequence('router', 'js:build', 'sync:reload');
     }, 2000);
 };

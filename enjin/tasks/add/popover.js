@@ -6,7 +6,7 @@ const addPopover = require('../../services/addPopover');
 
 module.exports = function(gulp, callback) {
     if (argv.n) {
-        addPopover(gulp, argv.n);
+        addPopover(argv.n);
         callback();
     } else {
         inquirer.prompt([{
@@ -14,7 +14,7 @@ module.exports = function(gulp, callback) {
             message: 'What is the name of the popover?',
             name: 'name'
         }], function(res) {
-            addPopover(gulp, res.name);
+            addPopover(res.name);
             callback();
         });
     }

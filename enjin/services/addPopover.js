@@ -3,7 +3,7 @@ const template = require('gulp-template');
 const npc      = require('copy-paste');
 
 
-module.exports = function(gulp, name) {
+module.exports = function(name) {
     gulp.src(tmplDir+'jade/popover.jade')
         .pipe(template({name: name}))
         .pipe(rename(name+'.jade'))

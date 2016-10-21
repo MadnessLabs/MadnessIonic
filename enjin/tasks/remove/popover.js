@@ -6,7 +6,7 @@ const removePopover = require('../../services/removePopover');
 
 module.exports = function(gulp, callback) {
     if (argv.n) {
-        removePopover(gulp, argv.n);
+        removePopover(argv.n);
         callback();
     } else {
         inquirer.prompt([{
@@ -14,7 +14,7 @@ module.exports = function(gulp, callback) {
             message: 'What is the name of the popover you would like to remove?',
             name: 'name'
         }], function(res) {
-            removePopover(gulp, res.name);
+            removePopover(res.name);
             callback();
         });
     }

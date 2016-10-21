@@ -6,7 +6,7 @@ const removeController = require('../../services/removeController');
 
 module.exports = function(gulp, callback) {
     if (argv.n) {
-        removeController(gulp, argv.n, argv.d);
+        removeController(argv.n, argv.d);
         callback();
     } else {
         inquirer.prompt([{
@@ -19,7 +19,7 @@ module.exports = function(gulp, callback) {
             name: 'dir',
             default: 'controller'
         }], function(res) {
-            removeController(gulp, res.name, res.dir);
+            removeController(res.name, res.dir);
             callback();
         });
     }

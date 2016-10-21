@@ -6,7 +6,7 @@ const addDirective = require('../../services/addDirective');
 
 module.exports = function(gulp, callback) {
     if (argv.n) {
-        addDirective(gulp, argv.n, argv.a, argv.t, argv.r);
+        addDirective(argv.n, argv.a, argv.t, argv.r);
         callback();
     } else {
         inquirer.prompt([{
@@ -19,7 +19,7 @@ module.exports = function(gulp, callback) {
             name: 'attrs',
             default: false
         }], function(res) {
-            addDirective(gulp, res.name, res.attrs);
+            addDirective(res.name, res.attrs);
             callback();
         });
     }

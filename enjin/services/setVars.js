@@ -1,7 +1,8 @@
 const merge = require('./merge');
 const fs    = require('fs');
 
-module.exports = function() {
+module.exports = function(callback) {
+    console.log('Setting Variables from enjin.json...');
     envFile      = '.env';
     if (environment) {
         envFile = envFile + '-' + environment;
@@ -22,6 +23,7 @@ module.exports = function() {
     appIcon      = configJSON.img.favicon;
     appLocal     = configJSON.local;
     appMobile    = configJSON.mobile;
+    appEntry     = configJSON.defaultRoute || false;
     appRoutes    = configJSON.routes;
     appUrl       = configJSON.url;
     appVersion   = configJSON.version;
@@ -67,4 +69,8 @@ module.exports = function() {
     jsWatch      = configJSON.js.watch;
     // TEMPLATES
     tmplDir      = configJSON.templates;
+
+    if (callback && typeof callback === "function") {
+        callback();
+    }
 };

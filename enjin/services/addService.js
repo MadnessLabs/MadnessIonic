@@ -4,7 +4,7 @@ const template = require('gulp-template');
 const capFirstLetter = require('./capFirstLetter');
 
 
-module.exports = function(gulp, name, type) {
+module.exports = function(name, type) {
     type = type ? type : '';
     gulp.src(tmplDir+'ts/service'+capFirstLetter(type)+'.ts')
         .pipe(template({

@@ -6,7 +6,7 @@ const addController  = require('./addController');
 const addRoute       = require('./addRoute');
 
 
-module.exports = function(gulp, name) {
+module.exports = function(name) {
     gulp.src(tmplDir+'jade/page.jade')
         .pipe(template({
             name: name
@@ -19,6 +19,6 @@ module.exports = function(gulp, name) {
         }))
         .pipe(rename(name+'.scss'))
         .pipe(gulp.dest(cssSrcDir+'page/'));
-    addController(gulp, name, 'page');
-    addRoute(gulp, name, '/'+name, 'html/page/'+name+'.html', capFirstLetter(name)+'Controller');
+    addController(name, 'page');
+    addRoute(name, '/'+name, 'html/page/'+name+'.html', capFirstLetter(name)+'Controller');
 };

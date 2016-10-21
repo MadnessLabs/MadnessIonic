@@ -6,7 +6,7 @@ const removeService = require('../../services/removeService');
 
 module.exports = function(gulp, callback) {
     if (argv.n) {
-        removeService(gulp, argv.n);
+        removeService(argv.n);
         callback();
     } else {
         inquirer.prompt([{
@@ -14,7 +14,7 @@ module.exports = function(gulp, callback) {
             message: 'What is the state name of the service you would like to remove?',
             name: 'service'
         }], function(res) {
-            removeService(gulp, res.service);
+            removeService(res.service);
             callback();
         });
     }

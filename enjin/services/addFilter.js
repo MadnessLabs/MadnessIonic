@@ -2,7 +2,7 @@ const rename   = require('gulp-rename');
 const template = require('gulp-template');
 
 
-module.exports = function(gulp, name, dir) {
+module.exports = function(name, dir) {
     gulp.src(tmplDir+'ts/filter.ts')
         .pipe(template({
             app: appName,

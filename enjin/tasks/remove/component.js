@@ -6,7 +6,7 @@ const removeComponent = require('../../services/removeComponent');
 
 module.exports = function(gulp, callback) {
     if (argv.n) {
-        removeComponent(gulp, argv.n);
+        removeComponent(argv.n);
         callback();
     } else {
         inquirer.prompt([{
@@ -14,7 +14,7 @@ module.exports = function(gulp, callback) {
             message: 'What is the name of the component you would like to remove? (CamelCase)',
             name: 'name'
         }], function(res) {
-            removeComponent(gulp, res.name);
+            removeComponent(res.name);
             callback();
         });
     }

@@ -1,7 +1,7 @@
 const jeditor  = require("gulp-json-editor");
 const runSequence = require("run-sequence");
 
-module.exports = function(gulp, name) {
+module.exports = function(name) {
     var newRoutes = appRoutes;
     for(var i=0; i < newRoutes.length; i++){
         var route = newRoutes[i];
@@ -17,6 +17,6 @@ module.exports = function(gulp, name) {
     }
     
     setTimeout(function(){
-        runSequence('router', 'js-build', 'sync-reload');
+        runSequence('router', 'js:build', 'sync:reload');
     }, 2000);
 };

@@ -4,7 +4,7 @@ const runSequence  = require('run-sequence');
 const jeditor      = require("gulp-json-editor");
 
 
-module.exports = function(gulp, name, url, template, controller, view) {
+module.exports = function(name, url, template, controller, view) {
     if (!view) {
         view = 'tab';
     }
@@ -42,6 +42,6 @@ module.exports = function(gulp, name, url, template, controller, view) {
         }))
         .pipe(gulp.dest("./"))
         .on('end', function(){
-            runSequence('router', 'js-build', 'sync-reload');
+            runSequence('router', 'js:build', 'sync:reload');
         });
 };

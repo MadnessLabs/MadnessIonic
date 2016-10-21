@@ -6,7 +6,7 @@ const removePage = require('../../services/removePage');
 
 module.exports = function(gulp, callback) {
     if (argv.n) {
-        removePage(gulp, argv.n);
+        removePage(argv.n);
         callback();
     } else {
         inquirer.prompt([{
@@ -14,7 +14,7 @@ module.exports = function(gulp, callback) {
             message: 'What is the state name of the page you would like to remove?',
             name: 'name'
         }], function(res) {
-            removePage(gulp, res.name);
+            removePage(res.name);
             callback();
         });
     }

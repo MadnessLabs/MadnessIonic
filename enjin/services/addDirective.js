@@ -2,7 +2,7 @@ const rename   = require('gulp-rename');
 const template = require('gulp-template');
 const npc      = require('copy-paste');
 
-module.exports = function(gulp, name, attrs, templatePath, restrict) {
+module.exports = function(name, attrs, templatePath, restrict) {
     var attrsJson = {};
     var attrProps = [];
     var attrName; 
