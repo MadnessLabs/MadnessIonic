@@ -3,6 +3,7 @@ const tslint      = require('gulp-tslint');
 const intercept   = require('gulp-intercept');
 const runSequence = require('run-sequence');
 const cache       = require('gulp-cached');
+const plumber     = require('gulp-plumber');
 
 
 module.exports = function(gulp, callback) {

@@ -13,4 +13,5 @@ module.exports = function(gulp, callback) {
         }
     });
     global.synced = true;
+    callback();
 };
