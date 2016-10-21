@@ -8,7 +8,7 @@
     },
     "repo": "http://github.com/madnesslabs/madnessionic",
     "root": "www/",
-    "templates": "templates/",
+    "templates": "enjin/templates/",
     "mobile": false,
     "local": true,
     "debug": true,
