@@ -23,4 +23,4 @@ module.exports = function(gulp, name) {
     `;
 
     npc.copy(copyText);
-}
+};
