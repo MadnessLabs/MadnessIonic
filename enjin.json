@@ -35,11 +35,11 @@
     "html": {
         "dir": "html/",
         "file": "index.html",
-        "srcDir": "app/jade/",
-        "srcFile": "app.jade",
+        "srcDir": "app/pug/",
+        "srcFile": "app.pug",
         "watch": [
-            "app/jade/**/*.jade",
-            "!app/jade/favicon.jade"
+            "app/pug/**/*.pug",
+            "!app/pug/favicon.pug"
         ]
     },
     "css": {
