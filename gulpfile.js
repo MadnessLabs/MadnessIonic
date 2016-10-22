@@ -1,7 +1,7 @@
  /////////////////////////////////////
 // REQUIRED LIBRARIES
 gulp         = require('gulp');
-startEnjin   = require('enjin');
+startEnjin   = require('enjinionic');
 
  /////////////////////////////////////
 // ON LOAD
