@@ -40,13 +40,15 @@
     "gulp-uglify": "^1.5.1",
     "gulp-watch": "^4.3.10",
     "inquirer": "^0.11.0",
-    "ionic-sdk": "https://github.com/driftyco/ionic/tarball/v1.3.0",
-    "ng-cordova": "^0.1.27-alpha",
     "node-sass": "^3.8.0",
     "path": "^0.12.7",
     "pug": "^2.0.0-beta6",
     "run-sequence": "^1.1.4",
     "yargs": "^4.4.0"
+  },
+  "dependencies": {
+    "ionic-sdk": "https://github.com/driftyco/ionic/tarball/v1.3.0",
+    "ng-cordova": "^0.1.27-alpha"
   },
   "cordovaPlugins": [
     "cordova-plugin-device",
