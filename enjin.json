@@ -114,6 +114,7 @@
             "build/js/filter/**/*.js",
             "build/js/directive/**/*.js",
             "build/js/service/**/*.js",
+            "build/js/state/**/*.js",
             "build/js/controller/**/*.js",
             "build/js/page/**/*.js"
         ],
