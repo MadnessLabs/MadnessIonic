@@ -26,6 +26,7 @@
     "gulp-ng-config": "^1.2.1",
     "gulp-plumber": "^1.0.1",
     "gulp-pug": "^3.1.0",
+    "gulp-pug-lint": "^0.1.6",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
     "gulp-require-tasks": "^1.0.5",
